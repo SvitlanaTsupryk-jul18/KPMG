@@ -1,0 +1,249 @@
+///add fonts
+
+@font-face {
+    font-family: "SegoeUIRegular";
+    src: url("../fonts/SegoeUIRegular/SegoeUIRegular.eot");
+    src: url("../fonts/SegoeUIRegular/SegoeUIRegular.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/SegoeUIRegular/SegoeUIRegular.woff") format("woff"),
+        url("../fonts/SegoeUIRegular/SegoeUIRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "SegoeUIBold";
+    src: url("../fonts/SegoeUIBold/SegoeUIBold.eot");
+    src: url("../fonts/SegoeUIBold/SegoeUIBold.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/SegoeUIBold/SegoeUIBold.woff") format("woff"),
+        url("../fonts/SegoeUIBold/SegoeUIBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "SegoeUIItalic";
+    src: url("../fonts/SegoeUIItalic/SegoeUIItalic.eot");
+    src: url("../fonts/SegoeUIItalic/SegoeUIItalic.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/SegoeUIItalic/SegoeUIItalic.woff") format("woff"),
+        url("../fonts/SegoeUIItalic/SegoeUIItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "SegoeUILight";
+    src: url("../fonts/SegoeUILight/SegoeUILight.eot");
+    src: url("../fonts/SegoeUILight/SegoeUILight.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/SegoeUILight/SegoeUILight.woff") format("woff"),
+        url("../fonts/SegoeUILight/SegoeUILight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "SegoeUISemiBold";
+    src: url("../fonts/SegoeUISemiBold/SegoeUISemiBold.eot");
+    src: url("../fonts/SegoeUISemiBold/SegoeUISemiBold.eot?#iefix")format("embedded-opentype"),
+        url("../fonts/SegoeUISemiBold/SegoeUISemiBold.woff") format("woff"),
+        url("../fonts/SegoeUISemiBold/SegoeUISemiBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+$main-color: #223b7e;
+$lite-color: #1c8ece;
+$text-color: #3c4f88;
+$logo-color:#1b5eaa;
+$img-color: #58a5d7;
+$main-font:'Montserrat',
+sans-serif;
+$text-font: 'Roboto Slab',
+serif;
+
+%sec-padding {
+    padding: 100px 0;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+@media (max-width:1160px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+body {
+    color: $text-color;
+    font-family: $text-font;
+    font-weight: 400;
+    padding-bottom: 285px;
+    scroll-behavior: smooth;
+}
+
+.sctitle {
+    text-transform: uppercase;
+    font-family: $main-font;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 60px;
+
+    &:before {
+        position: absolute;
+        content: " ";
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 50px;
+        height: 2px;
+        background-color: $text-color;
+    }
+}
+
+.undertitle {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    background-color: $img-color;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    padding: 20%;
+    transition: 1s all;
+    opacity: 1;
+    visibility: visible;
+}
+
+.loader {
+    width: 90px;
+    height: 90px;
+    border: 10px solid white;
+    border-radius: 50%;
+    border-top-color: #c0301c;
+    line-height: 60px;
+    color: white;
+    padding: 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s infinite;
+}
+
+.done {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#left,
+#right {
+    display: inline-block;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    %sec-padding {
+        padding: 50px 0;
+    }
+
+    body {
+        padding-bottom: 195px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .undertitle {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 470px) and(min-width: 320px) {
+    %sec-padding {
+        padding: 20px 0;
+    }
+
+    body {
+        padding-bottom: 135px;
+    }
+
+    .sctitle {
+        padding-bottom: 30px;
+
+        &:before {
+            top: 30px;
+        }
+    }
+}
+
+@keyframes rubberBand {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.rubberBand {
+    -webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
+}
