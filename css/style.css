@@ -65,6 +65,21 @@ h1 {
     font-size: 12px;
     list-style: none;
     padding-right: 40px; }
+    .nav__list a {
+      position: relative;
+      transition: all 0.6s; }
+      .nav__list a:before {
+        content: "";
+        width: 0;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: white;
+        transition: all 0.3s; }
+      .nav__list a:hover:before {
+        width: 100%;
+        left: 0; }
     .nav__list:first-of-type, .nav__list:last-of-type {
       padding-right: 0; }
     .nav__list a {
@@ -117,8 +132,9 @@ h1 {
   border: none;
   outline-color: white;
   position: fixed;
-  height: 55px;
+  height: 45px;
   right: 10%;
+  top: 20px;
   padding: 10px;
   border-radius: 2px;
   background-color: #223b7e;
@@ -128,29 +144,27 @@ h1 {
   opacity: .95; }
   .burger-open span {
     width: 35px;
-    height: 5px;
+    height: 3px;
     background-color: white;
     display: block;
     border-radius: 5px; }
 
 .burger-close {
   color: white;
-  transition: transform .3s;
+  transition: all .3s;
   text-decoration: none;
   font-weight: 400;
   font-size: 3em;
   background: none;
   border: none;
   outline-style: none;
-  display: block;
   width: 100%;
   display: none; }
 
-@keyframes spin {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg); }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg); } }
+.logo {
+  transition: all .2s; }
+  .logo:hover {
+    animation: rubberBand 1s 1; }
 
 @keyframes rubberBand {
   from {
@@ -175,11 +189,45 @@ h1 {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1); } }
 
-.rubberBand {
-  -webkit-animation-name: rubberBand;
-  animation-name: rubberBand; }
-
-@media (max-width: 1140px) {
+@media only screen and (max-width: 1140px) {
   .container {
     padding-left: 20px;
     padding-right: 20px; } }
+
+@media only screen and (max-width: 992px) {
+  .header {
+    justify-content: flex-start;
+    flex-wrap: wrap; }
+    .header h1 {
+      padding-left: 20px; }
+  .menu {
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    width: 100%; }
+    .menu .menu__btn {
+      margin: 20px; }
+  .nav {
+    flex-direction: column;
+    text-align: center; }
+    .nav .nav__list {
+      padding: 0;
+      margin: 20px; }
+  .burger--visibility {
+    display: flex; }
+  .burger-close {
+    display: block;
+    padding: 0; }
+    .burger-close:hover {
+      transform: rotate(90deg) scale(1.2);
+      transform-origin: 50% 60%; } }
+
+@media only screen and (max-width: 576px) {
+  h1 {
+    font-size: 24px;
+    padding-top: 20px; } }
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start; } }
