@@ -62,7 +62,7 @@ $logo-size:283px;
     height: $logo-size;
     border: 1px solid #d9dde9;
     border-radius: 50%;
-
+    cursor: url(../images/icons/mouse-pointer-solid.svg), pointer;
 
     &__title {
         font-size: 50px;
@@ -74,6 +74,7 @@ $logo-size:283px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        transition: all .3s;
     }
 
     &__circle {
@@ -84,12 +85,17 @@ $logo-size:283px;
         position: absolute;
         top: 12%;
         left: 12%;
-        transition: all.3s;
-    }
-
-    &:hover .logo-big__circle {
+        transition: all .3s;
         transform-origin: center;
         animation: rotate 4s linear infinite;
+    }
+
+    &:hover {
+        background-color: #e8f3fa;
+    }
+
+    &:hover .logo-big__title {
+        color: $text-color;
     }
 
 }

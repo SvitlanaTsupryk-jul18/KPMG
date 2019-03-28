@@ -418,7 +418,8 @@ h1 {
   width: 283px;
   height: 283px;
   border: 1px solid #d9dde9;
-  border-radius: 50%; }
+  border-radius: 50%;
+  cursor: url(../images/icons/mouse-pointer-solid.svg), pointer; }
   .logo-big__title {
     font-size: 50px;
     font-weight: bold;
@@ -428,7 +429,8 @@ h1 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    transition: all .3s; }
   .logo-big__circle {
     width: 12px;
     height: 12px;
@@ -437,10 +439,13 @@ h1 {
     position: absolute;
     top: 12%;
     left: 12%;
-    transition: all 0.3s; }
-  .logo-big:hover .logo-big__circle {
+    transition: all .3s;
     transform-origin: center;
     animation: rotate 4s linear infinite; }
+  .logo-big:hover {
+    background-color: #e8f3fa; }
+  .logo-big:hover .logo-big__title {
+    color: #223b7e; }
 
 @keyframes rotate {
   0% {
