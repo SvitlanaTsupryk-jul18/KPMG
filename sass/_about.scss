@@ -37,16 +37,11 @@
         font-weight: bold;
         font-size: 16px;
         padding: 20px;
-        display: inline-block;
-        color: #3697d1;
-        text-decoration: underline;
+        @extend %link;
     }
 }
 
 .read-more {
-    text-decoration: underline;
+    @extend %link;
     font-size: 10px;
-    cursor: pointer;
-    color: #3697d1;
-    display: inline-block;
 }

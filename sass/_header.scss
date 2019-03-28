@@ -65,6 +65,12 @@ $logo-color:#1b5eaa;
     text-decoration: none;
 }
 
+%link {
+    display: inline-block;
+    text-decoration: underline;
+    cursor: url(../images/icons/mouse-pointer-solid.svg), pointer;
+    color: #3697d1;
+}
 
 body {
     color: $text-color;

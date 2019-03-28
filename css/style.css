@@ -39,6 +39,12 @@
   list-style: none;
   text-decoration: none; }
 
+.about__link, .read-more, footer p a, footer ul li a {
+  display: inline-block;
+  text-decoration: underline;
+  cursor: url(../images/icons/mouse-pointer-solid.svg), pointer;
+  color: #3697d1; }
+
 body {
   color: #223b7e;
   font-family: "SegoeUIRegular", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -499,14 +505,44 @@ h1 {
   .about__link {
     font-weight: bold;
     font-size: 16px;
-    padding: 20px;
-    display: inline-block;
-    color: #3697d1;
-    text-decoration: underline; }
+    padding: 20px; }
 
 .read-more {
-  text-decoration: underline;
-  font-size: 10px;
-  cursor: pointer;
-  color: #3697d1;
-  display: inline-block; }
+  font-size: 10px; }
+
+footer {
+  padding: 23px;
+  font-size: 12px;
+  text-align: center;
+  color: #223b7e; }
+  footer p {
+    font-size: 12px;
+    color: #223b7e; }
+  footer ul {
+    display: flex;
+    padding: 0 2rem;
+    justify-content: space-between;
+    padding: 1rem 0; }
+    footer ul li {
+      display: inline-block;
+      width: 100%;
+      padding: 5px 0;
+      position: relative; }
+      footer ul li a {
+        font-size: 10px;
+        white-space: nowrap; }
+      footer ul li:not(:first-child)::before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background-color: #a7b1cb;
+        width: 1px;
+        height: 100%; }
+
+.footer__bottom {
+  padding-top: 15px;
+  width: 55%;
+  margin: 0 auto; }
+  .footer__bottom p {
+    font-size: 10px; }

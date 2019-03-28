@@ -41,16 +41,18 @@
 
   function readMore() {
     let section = document.querySelector(".about__inner");
-    let hasAttr = section.querySelectorAll("[data-item]");
-    let points = document.querySelectorAll(".points");
+    let hasAttr = [...section.querySelectorAll("[data-item]")];
     section.addEventListener("click", function (e) {
       if (!e.target.classList.contains("read-more")) return;
       let itemHide = e.target.dataset.item;
+      hasAttr.forEach(el => {
+        if (el.dataset.item === itemHide) {
+          el.classList.contains("points") ? el.style.display = "none" : el.style.display = "inline-block";
+        }
+
+        ;
+      });
       e.target.style.display = "none";
-      console.log(hasAttr, itemHide); // if (!(e.target.closest("TD") && e.target.dataset.selectable))
-      //     return;
-      // cells.forEach(el => el.classList.remove("clicked"));
-      // e.target.closest("TD").classList.add("clicked");
     });
   } ////smoothScroll
 
