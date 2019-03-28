@@ -1,9 +1,11 @@
 'use strict';
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const browserSync = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
+const babel = require("gulp-babel");
+
 
 
 gulp.task('sass', function () {
@@ -34,7 +36,14 @@ gulp.task('syncReload', function () {
     browserSync.reload();
 });
 
+gulp.task('scripts', function () {
+    return gulp.src('script.js')
+        .pipe(babel())
+        .pipe(gulp.dest("dist"));
+});
 
-gulp.task('default', ['browser-sync', 'sass'], function () {
+
+gulp.task('default', ['browser-sync', 'sass', 'scripts'], function () {
     gulp.watch('./sass/**/*.scss', ['sass', 'syncReload']);
+    gulp.watch('script.js', ['scripts', 'syncReload']);
 });

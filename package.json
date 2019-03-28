@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/SvitlanaTsupryk-jul18/KPMG#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.0",
     "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0-beta.2",
     "gulp-sass": "^4.0.2"
   },
   "dependencies": {
