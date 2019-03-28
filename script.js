@@ -2,12 +2,15 @@
 
     burger();
     showCard();
+    readMore();
+
     // modal();
     // smoothScrollLinks();
 
     ///burger-menu
 
     function burger() {
+
         let menu = document.querySelector(".menu");
         let openbtn = document.querySelector(".js-burger-open");
         let closebtn = document.querySelector(".js-burger-close");
@@ -45,6 +48,23 @@
             });
         });
 
+    }
+
+    function readMore() {
+
+        let section = document.querySelector(".about__inner");
+        let hasAttr = [...section.querySelectorAll("[data-item]")];
+
+        section.addEventListener("click", function (e) {
+            if (!e.target.classList.contains("read-more")) return;
+            let itemHide = e.target.dataset.item;
+            hasAttr.forEach((el) => {
+                if (el.dataset.item === itemHide) {
+                    el.classList.contains("points") ? el.style.display = "none" : el.style.display = "inline-block";
+                };
+            })
+            e.target.style.display = "none";
+        });
     }
 
 

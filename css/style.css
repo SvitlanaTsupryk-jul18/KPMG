@@ -423,6 +423,7 @@ h1 {
   height: 283px;
   border: 1px solid #d9dde9;
   border-radius: 50%;
+  transition: all .2s;
   cursor: url(../images/icons/mouse-pointer-solid.svg), pointer; }
   .logo-big__title {
     font-size: 50px;
@@ -493,9 +494,19 @@ h1 {
     font-size: 12px; }
     .about__content span {
       font-weight: bold; }
-  .about a {
-    text-decoration: underline;
-    font-size: 10px; }
+    .about__content--more {
+      display: none; }
   .about__link {
     font-weight: bold;
-    font-size: 16px; }
+    font-size: 16px;
+    padding: 20px;
+    display: inline-block;
+    color: #3697d1;
+    text-decoration: underline; }
+
+.read-more {
+  text-decoration: underline;
+  font-size: 10px;
+  cursor: pointer;
+  color: #3697d1;
+  display: inline-block; }
