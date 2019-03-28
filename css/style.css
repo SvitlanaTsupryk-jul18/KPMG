@@ -441,3 +441,25 @@ h1 {
   .logo-big:hover .logo-big__circle {
     transform-origin: center;
     animation: rotate 4s linear infinite; }
+
+@keyframes rotate {
+  0% {
+    transform: translate(100px, 100px) rotate(0deg) translate(-100px, -100px) rotate(0deg); }
+  13% {
+    transform: translate(100px, 100px) rotate(45deg) translate(-100px, -100px) rotate(-45deg); }
+  25% {
+    transform: translate(100px, 100px) rotate(90deg) translate(-100px, -100px) rotate(-90deg);
+    background-color: #1c8ece; }
+  38% {
+    transform: translate(100px, 100px) rotate(135deg) translate(-100px, -100px) rotate(0deg); }
+  50% {
+    transform: translate(100px, 100px) rotate(180deg) translate(-100px, -100px) rotate(-180deg); }
+  63% {
+    transform: translate(100px, 100px) rotate(225deg) translate(-100px, -100px) rotate(225deg);
+    background-color: #1b5eaa; }
+  75% {
+    transform: translate(100px, 100px) rotate(270deg) translate(-100px, -100px) rotate(-270deg); }
+  88% {
+    transform: translate(100px, 100px) rotate(315deg) translate(-100px, -100px) rotate(315deg); }
+  100% {
+    transform: translate(100px, 100px) rotate(360deg) translate(-100px, -100px) rotate(-360deg); } }
