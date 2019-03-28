@@ -29,6 +29,8 @@
 .container {
   max-width: 1140px;
   margin: 0 auto; }
+  .container--about {
+    padding: 75px 100px; }
 
 * {
   box-sizing: border-box;
@@ -380,11 +382,6 @@ h1 {
   padding: 80px 0;
   text-align: center;
   height: 100vh; }
-  .offer h2 {
-    font-size: 36px;
-    color: #1c8ece;
-    font-weight: normal;
-    text-transform: uppercase; }
   .offer__text {
     font-size: 14px;
     color: #223b7e;
@@ -402,7 +399,8 @@ h1 {
     font-size: 16px;
     color: #1c8ece;
     text-transform: uppercase;
-    padding: 20px 0; }
+    padding: 20px 0;
+    font-weight: bold; }
   .offer__content {
     font-size: 12px;
     color: #223b7e;
@@ -412,6 +410,12 @@ h1 {
     cursor: url(../images/icons/mouse-pointer-solid.svg), pointer; }
     .offer__item:hover .offer__content {
       visibility: visible; }
+
+.h2 {
+  font-size: 36px;
+  color: #1c8ece;
+  font-weight: normal;
+  text-transform: uppercase; }
 
 .logo-big {
   position: relative;
@@ -468,3 +472,30 @@ h1 {
     transform: translate(100px, 100px) rotate(315deg) translate(-100px, -100px) rotate(315deg); }
   100% {
     transform: translate(100px, 100px) rotate(360deg) translate(-100px, -100px) rotate(-360deg); } }
+
+.about {
+  background-color: #e8f3fa;
+  text-align: center; }
+  .about__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 65px; }
+  .about__title {
+    font-size: 16px;
+    font-weight: normal;
+    color: #1c8ece;
+    text-transform: uppercase;
+    padding-bottom: 30px; }
+  .about__col {
+    padding: 0 40px; }
+  .about__content {
+    color: #223b7e;
+    font-size: 12px; }
+    .about__content span {
+      font-weight: bold; }
+  .about a {
+    text-decoration: underline;
+    font-size: 10px; }
+  .about__link {
+    font-weight: bold;
+    font-size: 16px; }

@@ -51,6 +51,10 @@ $logo-color:#1b5eaa;
 .container {
     max-width: 1140px;
     margin: 0 auto;
+
+    &--about {
+        padding: 75px 100px;
+    }
 }
 
 * {

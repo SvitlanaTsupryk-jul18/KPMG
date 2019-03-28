@@ -3,13 +3,6 @@
     text-align: center;
     height: 100vh;
 
-    h2 {
-        font-size: 36px;
-        color: $title-color;
-        font-weight: normal;
-        text-transform: uppercase;
-    }
-
     &__text {
         font-size: 14px;
         color: $text-color;
@@ -35,7 +28,7 @@
         color: $title-color;
         text-transform: uppercase;
         padding: 20px 0;
-
+        font-weight: bold;
     }
 
     &__content {
@@ -52,6 +45,13 @@
             visibility: visible;
         }
     }
+}
+
+.h2 {
+    font-size: 36px;
+    color: $title-color;
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
 $logo-size:283px;
