@@ -197,7 +197,7 @@ h1 {
     background: none;
     border: none;
     outline-color: white;
-    position: fixed;
+    position: absolute;
     height: 45px;
     right: 10%;
     top: 20px;
@@ -207,7 +207,6 @@ h1 {
     z-index: 2;
     display: none;
     transition: .3s;
-    opacity: .95;
 
     span {
         width: 35px;
@@ -337,8 +336,14 @@ h1 {
     .menu {
         flex-direction: column;
         text-align: center;
-        display: none;
+        transform: translateY(-300%);
         width: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgba(34, 59, 126, .9);
+        padding: 20px;
 
         .menu__btn {
             margin: 20px;

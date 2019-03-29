@@ -139,7 +139,7 @@ h1 {
   background: none;
   border: none;
   outline-color: white;
-  position: fixed;
+  position: absolute;
   height: 45px;
   right: 10%;
   top: 20px;
@@ -148,8 +148,7 @@ h1 {
   background-color: #223b7e;
   z-index: 2;
   display: none;
-  transition: .3s;
-  opacity: .95; }
+  transition: .3s; }
   .burger-open span {
     width: 35px;
     height: 3px;
@@ -234,8 +233,14 @@ h1 {
   .menu {
     flex-direction: column;
     text-align: center;
-    display: none;
-    width: 100%; }
+    transform: translateY(-300%);
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(34, 59, 126, 0.9);
+    padding: 20px; }
     .menu .menu__btn {
       margin: 20px; }
   .nav {
@@ -267,7 +272,8 @@ h1 {
   background-color: #0072bc;
   height: calc(100vh - 98px);
   position: relative;
-  color: white; }
+  color: white;
+  overflow: hidden; }
   .hero:before {
     content: '';
     height: 1px;
@@ -384,10 +390,35 @@ h1 {
 .shown {
   visibility: visible; }
 
+@media only screen and (max-width: 768px) {
+  .hero__stage-card {
+    display: none; }
+  .hero__text {
+    width: 80%; } }
+
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+  .hero {
+    height: 110vh; }
+    .hero:before {
+      content: '';
+      height: 40%;
+      width: 1px;
+      background: #338ec9;
+      position: absolute;
+      left: 50%;
+      top: 28%;
+      opacity: 0.5; }
+    .hero__stages {
+      flex-wrap: wrap;
+      top: 28%; }
+    .hero__stage {
+      padding: 10px 40px;
+      width: 100%; } }
+
 .offer {
-  padding: 80px 0;
+  margin: 80px 0;
   text-align: center;
-  height: 100vh; }
+  height: calc(100vh - 2*80px); }
   .offer__text {
     font-size: 14px;
     color: #223b7e;
@@ -480,6 +511,39 @@ h1 {
   100% {
     transform: translate(100px, 100px) rotate(360deg) translate(-100px, -100px) rotate(-360deg); } }
 
+@media only screen and (max-width: 768px) {
+  .offer {
+    margin: 40px 0;
+    text-align: center;
+    height: calc(100vh - 80px); }
+    .offer__inner {
+      padding: 0; }
+    .offer__content {
+      visibility: visible; }
+  .logo-big {
+    width: 120px;
+    height: 120px;
+    transform: translateY(50%); }
+    .logo-big__title {
+      font-size: 24px; }
+    .logo-big__circle {
+      transform: translate(-20%, -20%);
+      animation: none; } }
+
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+  .offer {
+    height: 100%; }
+    .offer__text {
+      padding: 20px 0 0 0; }
+    .offer__inner {
+      flex-wrap: wrap; }
+    .offer__col {
+      width: 90%; }
+      .offer__col--logo {
+        order: -1; }
+  .logo-big {
+    transform: translateY(10%); } }
+
 .about {
   background-color: #e8f3fa;
   text-align: center; }
@@ -510,8 +574,22 @@ h1 {
 .read-more {
   font-size: 10px; }
 
+@media only screen and (max-width: 992px) {
+  .about__col {
+    padding: 0 20px; } }
+
+@media only screen and (max-width: 768px) {
+  .container--about {
+    padding: 40px 0; }
+  .about__inner {
+    padding-top: 40px; } }
+
+@media only screen and (min-width: 320px) and (max-width: 992px) {
+  .about__inner {
+    grid-template-columns: repeat(1, 1fr); } }
+
 footer {
-  padding: 23px;
+  padding: 23px 0;
   font-size: 12px;
   text-align: center;
   color: #223b7e; }
@@ -529,8 +607,7 @@ footer {
       padding: 5px 0;
       position: relative; }
       footer ul li a {
-        font-size: 10px;
-        white-space: nowrap; }
+        font-size: 10px; }
       footer ul li:not(:first-child)::before {
         content: "";
         position: absolute;
@@ -546,3 +623,18 @@ footer {
   margin: 0 auto; }
   .footer__bottom p {
     font-size: 10px; }
+
+@media only screen and (max-width: 992px) {
+  footer ul li {
+    padding: 10px; } }
+
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+  footer ul {
+    flex-wrap: wrap; }
+    footer ul li {
+      width: 50%; }
+      footer ul li:not(:first-child)::before {
+        width: 0px; }
+  .footer__bottom {
+    width: 100%;
+    padding-top: 0; } }

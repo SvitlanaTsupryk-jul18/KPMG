@@ -20,12 +20,12 @@
 
         function show() {
             this.classList.remove("burger--visibility");
-            menu.style.display = "flex";
+            menu.style.transform = ("translate(0)");
         }
 
         function hide() {
             openbtn.classList.add("burger--visibility");
-            menu.style.display = "none";
+            menu.style.transform = ("translate(-300%)");
         }
     }
 

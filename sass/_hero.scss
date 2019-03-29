@@ -3,7 +3,7 @@
     height: calc(100vh - 98px);
     position: relative;
     color: white;
-
+    overflow: hidden;
 
     &:before {
         content: '';
@@ -166,4 +166,45 @@
 
 .shown {
     visibility: visible;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .hero {
+        &__stage-card {
+            display: none;
+        }
+
+        &__text {
+            width: 80%;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+    .hero {
+        height: 110vh;
+
+        &:before {
+            content: '';
+            height: 40%;
+            width: 1px;
+            background: #338ec9;
+            position: absolute;
+            left: 50%;
+            top: 28%;
+            opacity: 0.5;
+        }
+
+        &__stages {
+            flex-wrap: wrap;
+            top: 28%;
+        }
+
+        &__stage {
+            padding: 10px 40px;
+            width: 100%;
+        }
+    }
 }
