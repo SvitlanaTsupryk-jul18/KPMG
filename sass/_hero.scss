@@ -66,6 +66,7 @@
             transition: all .2s;
             visibility: hidden;
             top: 0;
+            left: 0;
             z-index: 1;
 
 
@@ -185,6 +186,12 @@
     visibility: visible;
 }
 
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+    .hero__stage-card {
+        width: 160%;
+    }
+}
 
 @media only screen and (max-width: 768px) {
     .hero {

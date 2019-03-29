@@ -104,10 +104,10 @@ h1 {
 .lang {
   background: url(../images/arrow.png);
   background-repeat: no-repeat;
-  background-position: 96% 45%;
+  background-position: 80% 45%;
   background-color: #223b7e;
   overflow: hidden;
-  width: 40px; }
+  width: 50px; }
   .lang__select {
     background-color: transparent;
     height: 100%;
@@ -336,6 +336,7 @@ h1 {
       transition: all .2s;
       visibility: hidden;
       top: 0;
+      left: 0;
       z-index: 1; }
       .hero__stage-card h4 {
         font-size: 16px;
@@ -410,6 +411,10 @@ h1 {
 
 .shown {
   visibility: visible; }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .hero__stage-card {
+    width: 160%; } }
 
 @media only screen and (max-width: 768px) {
   .hero__stage-card {
@@ -569,7 +574,9 @@ h1 {
   background-color: #e8f3fa;
   text-align: center; }
   .about__inner {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: repeat(3, 1fr);
     padding-top: 65px; }
   .about__title {
@@ -580,6 +587,12 @@ h1 {
     padding-bottom: 30px; }
   .about__col {
     padding: 0 40px; }
+    .about__col:first-child {
+      -ms-grid-column: 1; }
+    .about__col:nth-child(2) {
+      -ms-grid-column: 2; }
+    .about__col:nth-child(3) {
+      -ms-grid-column: 3; }
   .about__content {
     color: #223b7e;
     font-size: 12px; }
@@ -596,7 +609,10 @@ h1 {
       animation: heartBeat 1s ease-in-out 1; }
 
 .read-more {
-  font-size: 10px; }
+  font-size: 10px;
+  transition: all .2s; }
+  .read-more:hover {
+    transform: scale(1.2); }
 
 @keyframes heartBeat {
   0% {
@@ -687,7 +703,7 @@ footer {
 
 #btn-up {
   position: fixed;
-  right: 10%;
+  right: 5%;
   bottom: 10%;
   display: block;
   padding: 10px;

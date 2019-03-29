@@ -3,9 +3,13 @@
     text-align: center;
 
     &__inner {
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: repeat(3, 1fr);
         padding-top: 65px;
+
+
     }
 
     &__title {
@@ -18,6 +22,20 @@
 
     &__col {
         padding: 0 40px;
+
+        &:first-child {
+            -ms-grid-column: 1;
+        }
+
+        &:nth-child(2) {
+            -ms-grid-column: 2;
+
+        }
+
+        &:nth-child(3) {
+            -ms-grid-column: 3;
+
+        }
     }
 
     &__content {
@@ -49,6 +67,11 @@
 .read-more {
     @extend %link;
     font-size: 10px;
+    transition: all .2s;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
 @keyframes heartBeat {

@@ -2,9 +2,8 @@
   burger();
   showCard();
   readMore();
-  toTop(); // modal();
-  // smoothScrollLinks();
-  ///burger-menu
+  toTop();
+  smoothScroll(); ///burger-menu
 
   function burger() {
     let menu = document.querySelector(".menu");
@@ -72,64 +71,20 @@
 
     buttonTop.addEventListener("click", function (e) {
       e.preventDefault();
-      document.querySelector(".hero").scrollIntoView({
+      document.querySelector(".header").scrollIntoView({
         behavior: 'smooth'
       });
     });
-  } ////smoothScroll
+  } ////smoothScroll on scrollDown button
 
 
-  function smoothScrollLinks() {
-    let nav = document.querySelector(".nav");
-    nav.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+  function smoothScroll() {
+    let scrollDown = document.querySelector(".scroll__btn");
+    scrollDown.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
       });
     });
-  } /////Gsap
-
-
-  function Tween() {
-    let tl = new TimelineMax();
-    tl.from('#left', 2, {
-      x: '-300%',
-      ease: Bounce.easeOut
-    }, delay = 1).from('#right', 2, {
-      x: '300%',
-      ease: Bounce.easeOut
-    }, "-=2").from('.wellcome__btn', .5, {
-      borderRadius: "30px"
-    }).from('.logo__h1', 1, {
-      y: '-100',
-      opacity: 0
-    }, "-=0.5").staggerFrom(".nav__list", .5, {
-      y: '-50',
-      opacity: 0
-    }, 0.1, "-=0.25");
-  }
-
-  function scrollMagic() {
-    // init controller
-    var controller = new ScrollMagic.Controller();
-    var tween = TweenMax.from('#about', 1, {
-      y: 500,
-      opacity: 0
-    });
-    var tween1 = TweenMax.from('#contacts', 1, {
-      y: 500,
-      opacity: 0
-    }); // create a scene
-
-    var scene = new ScrollMagic.Scene({
-      triggerElement: "#servises",
-      offset: 400
-    }).setTween(tween).addTo(controller);
-    var scene2 = new ScrollMagic.Scene({
-      triggerElement: "#clients",
-      offset: 300
-    }).setTween(tween1).addTo(controller);
   }
 })();
