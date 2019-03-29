@@ -3,7 +3,7 @@
     burger();
     showCard();
     readMore();
-
+    toTop();
     // modal();
     // smoothScrollLinks();
 
@@ -50,6 +50,8 @@
 
     }
 
+    ///adding more text after click 
+
     function readMore() {
 
         let section = document.querySelector(".about__inner");
@@ -64,24 +66,6 @@
                 };
             })
             e.target.style.display = "none";
-        });
-    }
-
-
-
-
-
-    ////smoothScroll
-
-    function smoothScrollLinks() {
-        let nav = document.querySelector(".nav")
-        nav.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
         });
     }
 
@@ -104,6 +88,24 @@
             });
         })
     }
+
+
+
+
+    ////smoothScroll
+
+    function smoothScrollLinks() {
+        let nav = document.querySelector(".nav")
+        nav.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    }
+
 
     /////Gsap
 

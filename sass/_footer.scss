@@ -26,11 +26,6 @@ footer {
             padding: 5px 0;
             position: relative;
 
-            a {
-                @extend %link;
-                font-size: 10px;
-            }
-
             &:not(:first-child)::before {
                 content: "";
                 position: absolute;
@@ -39,6 +34,11 @@ footer {
                 background-color: #a7b1cb;
                 width: 1px;
                 height: 100%;
+            }
+
+            &:hover .footer__link {
+                text-decoration: none;
+                color: $text-color;
             }
         }
     }
@@ -55,6 +55,11 @@ footer {
     }
 }
 
+.footer__link {
+    @extend %link;
+    font-size: 10px;
+    transition: all .2s;
+}
 
 @media only screen and (max-width: 992px) {
     footer ul li {
@@ -82,4 +87,30 @@ footer {
         width: 100%;
         padding-top: 0;
     }
+}
+
+///button to top
+
+#btn-up {
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
+    display: block;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+    box-shadow: 2px 1px 4px 1px $text-color;
+    color: white;
+    font-weight: bold;
+    transition: .2s all ease-in;
+    opacity: 0;
+
+    &:hover .btn-img {
+        transform: translateY(-10px);
+    }
+}
+
+.btn-img {
+    transition: all .5s;
 }

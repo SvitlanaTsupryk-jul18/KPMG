@@ -43,7 +43,7 @@
         cursor: pointer;
 
         &:hover .circle {
-            animation: pulse .8s ease-in infinite;
+            animation: pulse .5s ease-in infinite;
         }
 
         h3 {
@@ -154,7 +154,23 @@
             display: block;
             height: 1px;
             width: 8px;
-            margin-top: 1px;
+            margin-top: 2px;
+            transition: all .4s;
+
+            &:nth-of-type(2n+1) {
+                background-color: white;
+            }
+
+            &:nth-of-type(2n) {
+                background-color: $title-color;
+            }
+        }
+
+        &:hover span:nth-of-type(2n+1) {
+            background-color: $title-color;
+        }
+
+        &:hover span:nth-of-type(2n) {
             background-color: white;
         }
     }
@@ -162,6 +178,7 @@
     span {
         transform: scaleY(1.4);
     }
+
 }
 
 .shown {

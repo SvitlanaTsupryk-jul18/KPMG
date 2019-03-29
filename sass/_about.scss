@@ -38,6 +38,11 @@
         font-size: 16px;
         padding: 20px;
         @extend %link;
+        transition: all .2s;
+
+        &:hover {
+            animation: heartBeat 1s ease-in-out 1;
+        }
     }
 }
 
@@ -46,6 +51,32 @@
     font-size: 10px;
 }
 
+@keyframes heartBeat {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    14% {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+
+    28% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    42% {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+
+    70% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
 
 @media only screen and (max-width: 992px) {
     .about__col {
@@ -66,7 +97,7 @@
     }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 992px) {
+@media only screen and (min-width: 320px) and (max-width: 576px) {
     .about__inner {
         grid-template-columns: repeat(1, 1fr);
     }

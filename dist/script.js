@@ -1,7 +1,8 @@
 (function () {
   burger();
   showCard();
-  readMore(); // modal();
+  readMore();
+  toTop(); // modal();
   // smoothScrollLinks();
   ///burger-menu
 
@@ -37,7 +38,8 @@
         console.log(link, card);
       });
     });
-  }
+  } ///adding more text after click 
+
 
   function readMore() {
     let section = document.querySelector(".about__inner");
@@ -53,19 +55,6 @@
         ;
       });
       e.target.style.display = "none";
-    });
-  } ////smoothScroll
-
-
-  function smoothScrollLinks() {
-    let nav = document.querySelector(".nav");
-    nav.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
     });
   } /// button to top
 
@@ -85,6 +74,19 @@
       e.preventDefault();
       document.querySelector(".hero").scrollIntoView({
         behavior: 'smooth'
+      });
+    });
+  } ////smoothScroll
+
+
+  function smoothScrollLinks() {
+    let nav = document.querySelector(".nav");
+    nav.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
       });
     });
   } /////Gsap

@@ -207,6 +207,7 @@ h1 {
     z-index: 2;
     display: none;
     transition: .3s;
+    cursor: pointer;
 
     span {
         width: 35px;
@@ -215,6 +216,10 @@ h1 {
         display: block;
         border-radius: 5px;
 
+    }
+
+    &:hover {
+        animation: rubberBand 1s 1;
     }
 }
 
@@ -229,6 +234,7 @@ h1 {
     outline-style: none;
     width: 100%;
     display: none;
+    cursor: pointer;
 }
 
 
@@ -236,7 +242,7 @@ h1 {
     transition: all .2s;
 
     &:hover {
-        animation: rubberBand 1s 1;
+        animation: tada 1s 1;
     }
 }
 
@@ -269,6 +275,39 @@ h1 {
     75% {
         -webkit-transform: scale3d(1.05, 0.95, 1);
         transform: scale3d(1.05, 0.95, 1);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes tada {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    10%,
+    20% {
+        -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
     }
 
     to {
