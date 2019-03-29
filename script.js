@@ -37,13 +37,11 @@
 
         [...document.querySelectorAll(".hero__stage")].forEach(el => {
             el.addEventListener("click", function (e) {
-                let link = e.target;
-                let card = link.nextElementSibling;
+                let card = e.target.nextElementSibling;
                 cards.forEach((el) => {
                     el.classList.remove("shown");
                 })
                 card.classList.add("shown");
-                console.log(link, card);
             });
         });
 

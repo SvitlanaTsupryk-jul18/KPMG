@@ -323,6 +323,9 @@ h1 {
       font-size: 16px;
       font-weight: normal;
       padding-top: 20px; }
+    .hero__stage:last-child {
+      right: 0;
+      left: -5%; }
     .hero__stage-card {
       position: absolute;
       border-radius: 15px;

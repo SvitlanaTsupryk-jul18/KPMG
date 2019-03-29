@@ -38,7 +38,9 @@ gulp.task('syncReload', function () {
 
 gulp.task('scripts', function () {
     return gulp.src('script.js')
-        .pipe(babel())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(gulp.dest("dist"));
 });
 

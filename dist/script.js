@@ -1,3 +1,26 @@
+"use strict";
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+    return arr2;
+  }
+}
+
 (function () {
   burger();
   showCard();
@@ -6,9 +29,9 @@
   smoothScroll(); ///burger-menu
 
   function burger() {
-    let menu = document.querySelector(".menu");
-    let openbtn = document.querySelector(".js-burger-open");
-    let closebtn = document.querySelector(".js-burger-close");
+    var menu = document.querySelector(".menu");
+    var openbtn = document.querySelector(".js-burger-open");
+    var closebtn = document.querySelector(".js-burger-close");
     openbtn.addEventListener("click", show);
     closebtn.addEventListener("click", hide);
 
@@ -25,28 +48,29 @@
 
 
   function showCard() {
-    let cards = document.querySelectorAll(".hero__stage-card");
-    [...document.querySelectorAll(".hero__stage")].forEach(el => {
+    var cards = document.querySelectorAll(".hero__stage-card");
+
+    _toConsumableArray(document.querySelectorAll(".hero__stage")).forEach(function (el) {
       el.addEventListener("click", function (e) {
-        let link = e.target;
-        let card = link.nextElementSibling;
-        cards.forEach(el => {
+        var card = e.target.nextElementSibling;
+        cards.forEach(function (el) {
           el.classList.remove("shown");
         });
         card.classList.add("shown");
-        console.log(link, card);
       });
     });
   } ///adding more text after click 
 
 
   function readMore() {
-    let section = document.querySelector(".about__inner");
-    let hasAttr = [...section.querySelectorAll("[data-item]")];
+    var section = document.querySelector(".about__inner");
+
+    var hasAttr = _toConsumableArray(section.querySelectorAll("[data-item]"));
+
     section.addEventListener("click", function (e) {
       if (!e.target.classList.contains("read-more")) return;
-      let itemHide = e.target.dataset.item;
-      hasAttr.forEach(el => {
+      var itemHide = e.target.dataset.item;
+      hasAttr.forEach(function (el) {
         if (el.dataset.item === itemHide) {
           el.classList.contains("points") ? el.style.display = "none" : el.style.display = "inline-block";
         }
@@ -79,7 +103,7 @@
 
 
   function smoothScroll() {
-    let scrollDown = document.querySelector(".scroll__btn");
+    var scrollDown = document.querySelector(".scroll__btn");
     scrollDown.addEventListener('click', function (e) {
       e.preventDefault();
       document.querySelector(this.getAttribute('href')).scrollIntoView({
