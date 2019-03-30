@@ -13,7 +13,8 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   showCard();
   readMore();
   toTop();
-  smoothScroll(); ///burger-menu
+  smoothScroll();
+  modal(); ///burger-menu
 
   function burger() {
     var menu = document.querySelector(".menu");
@@ -58,6 +59,8 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       if (!e.target.classList.contains("read-more")) return;
       var itemHide = e.target.dataset.item;
       hasAttr.forEach(function (el) {
+        e.preventDefault();
+
         if (el.dataset.item === itemHide) {
           el.classList.contains("points") ? el.style.display = "none" : el.style.display = "inline-block";
         }
@@ -85,6 +88,26 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       document.querySelector(".header").scrollIntoView({
         behavior: 'smooth'
       });
+    });
+  } //modal window
+
+
+  function modal() {
+    var namePages = document.querySelectorAll("[data-page]");
+    var modal = document.querySelector(".modal");
+    var closeModalButton = document.querySelector(".modal__btn");
+    var title = modal.querySelector(".modal__name");
+    namePages.forEach(function (name) {
+      return name.addEventListener("click", function (e) {
+        e.preventDefault();
+        modal.classList.replace("hideModal", "showModal");
+        closeModalButton.style.visibility = "visible";
+        title.innerHTML = name.dataset.page;
+      });
+    });
+    closeModalButton.addEventListener("click", function () {
+      modal.classList.replace("showModal", "hideModal");
+      closeModalButton.style.visibility = "hidden";
     });
   } ////smoothScroll on scrollDown button
 

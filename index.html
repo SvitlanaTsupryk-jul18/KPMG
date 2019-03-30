@@ -8,7 +8,7 @@
     <title>KPMG</title>
     <link rel='stylesheet'
         href='https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css'>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="dist/style.css">
 </head>
 
 <body>
@@ -21,9 +21,9 @@
             <div class="menu">
                 <ul class="nav">
                     <li class="nav__list"><button type="button" class="burger-close js-burger-close">&times;</button>
-                    <li class="nav__list"><a href="#">Users</a></li>
-                    <li class="nav__list"><a href="#servises">Autorization</a></li>
-                    <li class="nav__list"><a href="#about">Admin</a></li>
+                    <li class="nav__list" data-page="users"><a href="#">Users</a></li>
+                    <li class="nav__list" data-page="Autorization"><a href="#">Autorization</a></li>
+                    <li class="nav__list" data-page="Admin"><a href="#">Admin</a></li>
                 </ul>
                 <a class="menu__btn" href="https://www.fluttr.in/bizAroundSite/opportunities/404/play/overview">go to
                     challenge</a>
@@ -40,6 +40,11 @@
                 <span></span>
                 <span></span>
             </button>
+            <div class="modal hideModal">
+                <p class="modal__name"></p>
+                <p>Hello!</p>
+                <button type="button" class="modal__btn menu__btn">Close</button>
+            </div>
         </div>
     </header>
     <section class="hero">

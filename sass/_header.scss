@@ -70,6 +70,7 @@ header {
     align-items: center;
     padding: 27px 0;
     color: white;
+    position: relative;
 }
 
 h1 {
@@ -140,6 +141,7 @@ h1 {
         transition: all .3s;
         margin: 0 6%;
         white-space: nowrap;
+        outline: none;
 
         &:hover {
             background-color: white;
@@ -224,6 +226,80 @@ h1 {
 
     &:hover {
         animation: tada 1s 1;
+    }
+}
+
+.modal {
+    position: absolute;
+    top: 120%;
+    left: 20%;
+    width: 60%;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 3px;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: $text-color;
+    font-size: 18px;
+    font-weight: bold;
+    align-items: center;
+    transition: all .3s;
+
+    &__name {
+        font-size: 20px;
+        color: $logo-color;
+        text-transform: uppercase;
+    }
+
+    &__btn {
+        width: 100px;
+        transform: scale(1.1);
+
+        &:hover {
+            background-color: $logo-color;
+            color: white;
+        }
+    }
+}
+
+.showModal {
+    visibility: visible;
+    animation: slideInDown .5s;
+}
+
+.hideModal {
+    visibility: hidden;
+    animation: zoomOutDown .5s;
+}
+
+@keyframes slideInDown {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes zoomOutDown {
+    40% {
+        opacity: 1;
+        transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+        transform-origin: center bottom;
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
     }
 }
 

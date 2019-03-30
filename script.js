@@ -5,6 +5,7 @@
     readMore();
     toTop();
     smoothScroll();
+    modal();
 
     ///burger-menu
 
@@ -27,7 +28,6 @@
             menu.style.transform = ("translate(-300%)");
         }
     }
-
 
     ///click on stage in hero section for show card
 
@@ -58,6 +58,7 @@
             if (!e.target.classList.contains("read-more")) return;
             let itemHide = e.target.dataset.item;
             hasAttr.forEach((el) => {
+                e.preventDefault();
                 if (el.dataset.item === itemHide) {
                     el.classList.contains("points") ? el.style.display = "none" : el.style.display = "inline-block";
                 };
@@ -86,6 +87,28 @@
         })
     }
 
+    //modal window
+
+    function modal() {
+        let namePages = document.querySelectorAll("[data-page]");
+        let modal = document.querySelector(".modal");
+        let closeModalButton = document.querySelector(".modal__btn");
+
+        let title = modal.querySelector(".modal__name");
+        namePages.forEach((name) =>
+            name.addEventListener("click", (e) => {
+                e.preventDefault();
+                modal.classList.replace("hideModal", "showModal");
+                closeModalButton.style.visibility = "visible";
+                title.innerHTML = name.dataset.page;
+            }))
+
+        closeModalButton.addEventListener("click", () => {
+            modal.classList.replace("showModal", "hideModal");
+            closeModalButton.style.visibility = "hidden";
+        })
+    }
+
     ////smoothScroll on scrollDown button
 
     function smoothScroll() {
@@ -96,7 +119,6 @@
                 behavior: 'smooth'
             });
         });
-
     }
 
 })();
