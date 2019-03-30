@@ -91,7 +91,7 @@ h1 {
     color: #fff;
     font-size: 16px;
     text-transform: uppercase;
-    padding: 12px 28px;
+    padding: 11px 28px;
     border-radius: 20px;
     border: solid 1px #1c8ece;
     transition: all .3s;
@@ -303,7 +303,7 @@ h1 {
     padding-left: 10%; }
   .hero__stages {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     position: absolute;
     top: 50%;
     left: 0;
@@ -392,8 +392,8 @@ h1 {
   .scroll__btn {
     display: inline-block;
     border: 1px solid white;
-    padding: 15px 10px;
-    border-radius: 13.5px;
+    padding: 11px 9px;
+    border-radius: 15px;
     margin: 0 10px; }
     .scroll__btn span {
       display: block;
@@ -581,13 +581,14 @@ h1 {
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: repeat(3, 1fr);
-    padding-top: 65px; }
+    padding-top: 60px; }
   .about__title {
     font-size: 16px;
     font-weight: normal;
     color: #1c8ece;
     text-transform: uppercase;
-    padding-bottom: 30px; }
+    padding-bottom: 30px;
+    padding-top: 10px; }
   .about__col {
     padding: 0 40px; }
     .about__col:first-child {
@@ -606,7 +607,7 @@ h1 {
   .about__link {
     font-weight: bold;
     font-size: 16px;
-    padding: 20px;
+    padding: 15px;
     transition: all .2s; }
     .about__link:hover {
       animation: heartBeat 1s ease-in-out 1; }
@@ -649,7 +650,7 @@ h1 {
     grid-template-columns: repeat(1, 1fr); } }
 
 footer {
-  padding: 23px 0;
+  padding: 35px 0 20px;
   font-size: 12px;
   text-align: center;
   color: #223b7e; }
