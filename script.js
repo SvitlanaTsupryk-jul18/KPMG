@@ -34,8 +34,9 @@
     function showCard() {
 
         let cards = document.querySelectorAll(".hero__stage-card");
+        let sectons = [...document.querySelectorAll(".hero__stage")]
 
-        [...document.querySelectorAll(".hero__stage")].forEach(el => {
+        sectons.forEach(el => {
             el.addEventListener("click", function (e) {
                 let card = e.target.nextElementSibling;
                 cards.forEach((el) => {
@@ -93,8 +94,8 @@
         let namePages = document.querySelectorAll("[data-page]");
         let modal = document.querySelector(".modal");
         let closeModalButton = document.querySelector(".modal__btn");
-
         let title = modal.querySelector(".modal__name");
+
         namePages.forEach((name) =>
             name.addEventListener("click", (e) => {
                 e.preventDefault();

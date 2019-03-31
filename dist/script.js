@@ -38,7 +38,9 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   function showCard() {
     var cards = document.querySelectorAll(".hero__stage-card");
 
-    _toConsumableArray(document.querySelectorAll(".hero__stage")).forEach(function (el) {
+    var sectons = _toConsumableArray(document.querySelectorAll(".hero__stage"));
+
+    sectons.forEach(function (el) {
       el.addEventListener("click", function (e) {
         var card = e.target.nextElementSibling;
         cards.forEach(function (el) {
