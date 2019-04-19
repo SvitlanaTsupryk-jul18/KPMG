@@ -387,6 +387,26 @@ h1 {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1); } }
 
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1111;
+  background-color: white;
+  text-align: center;
+  color: #223b7e;
+  padding: 10% 30%;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+  opacity: 1;
+  visibility: visible; }
+
+.done {
+  opacity: 0;
+  visibility: hidden; }
+
 @media only screen and (max-width: 1140px) {
   .container {
     padding-left: 20px;

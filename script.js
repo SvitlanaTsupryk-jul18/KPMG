@@ -1,6 +1,6 @@
 (function () {
 
-    
+
     preloader();
     burger();
     showCard();
@@ -9,7 +9,7 @@
     smoothScroll();
     modal();
 
-     //////preloader
+    //////preloader
 
     function preloader() {
         document.body.onload = function () {
@@ -18,10 +18,10 @@
                 if (!preloader.classList.contains('done')) {
                     preloader.classList.add('done');
                 }
-            }, 1000)
+            }, 500)
         }
     };
-    
+
     ///burger-menu
 
     function burger() {
