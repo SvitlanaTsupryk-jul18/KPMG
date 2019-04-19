@@ -1,5 +1,7 @@
 (function () {
 
+    
+    preloader();
     burger();
     showCard();
     readMore();
@@ -7,6 +9,19 @@
     smoothScroll();
     modal();
 
+     //////preloader
+
+    function preloader() {
+        document.body.onload = function () {
+            setTimeout(function () {
+                var preloader = document.querySelector(".preloader");
+                if (!preloader.classList.contains('done')) {
+                    preloader.classList.add('done');
+                }
+            }, 1000)
+        }
+    };
+    
     ///burger-menu
 
     function burger() {
